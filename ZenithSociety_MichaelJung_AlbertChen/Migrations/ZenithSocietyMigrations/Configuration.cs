@@ -1,9 +1,11 @@
 namespace ZenithSociety_MichaelJung_AlbertChen.Migrations.ZenithSocietyMigrations
 {
     using System;
+    using System.Collections.Generic;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
+    using ZenithDataLib;
 
     internal sealed class Configuration : DbMigrationsConfiguration<ZenithDataLib.ApplicationDbContext>
     {
@@ -27,6 +29,18 @@ namespace ZenithSociety_MichaelJung_AlbertChen.Migrations.ZenithSocietyMigration
             //      new Person { FullName = "Rowan Miller" }
             //    );
             //
+
+
+        }
+
+        private Activity[] getActivites()
+        {
+            List<Activity> activities = new List<Activity>()
+            {
+
+            };
+               
+            return activities.ToArray();
         }
     }
 }
