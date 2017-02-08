@@ -39,8 +39,17 @@ namespace ZenithSociety_MichaelJung_AlbertChen.Migrations.ZenithSocietyMigration
             {
 
             };
-               
+
             return activities.ToArray();
+        }
+
+        private Event[] getEvents() 
+        {
+            List < Event > events = new List<Event>()
+            {
+
+            };
+            return events.ToArray();
         }
     }
 }
