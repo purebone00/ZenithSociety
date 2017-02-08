@@ -9,6 +9,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using ZenithSociety_MichaelJung_AlbertChen.Models;
+using ZenithDataLib;
 
 namespace ZenithSociety_MichaelJung_AlbertChen.Controllers
 {

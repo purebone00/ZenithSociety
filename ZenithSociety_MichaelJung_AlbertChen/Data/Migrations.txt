@@ -1,0 +1,5 @@
+﻿enable-migrations -ContextProjectName ZenithDataLib -StartUpProjectName ZenithSociety_MichaelJung_AlbertChen -ContextTypeName ApplicationDbContext -MigrationsDirectory Migrations\ZenithSocietyMigrations
+
+add-migration -ConfigurationTypeName ZenithSociety_MichaelJung_AlbertChen.Migrations.ZenithSocietyMigrations.Configuration "InitialCreate"
+
+update-database -ConfigurationTypeName ZenithSociety_MichaelJung_AlbertChen.Migrations.ZenithSocietyMigrations.Configuration

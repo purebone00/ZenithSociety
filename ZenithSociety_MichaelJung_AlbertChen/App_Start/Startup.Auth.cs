@@ -6,6 +6,7 @@ using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Owin;
 using ZenithSociety_MichaelJung_AlbertChen.Models;
+using ZenithDataLib;
 
 namespace ZenithSociety_MichaelJung_AlbertChen
 {
