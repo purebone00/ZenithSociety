@@ -37,7 +37,71 @@ namespace ZenithSociety_MichaelJung_AlbertChen.Migrations.ZenithSocietyMigration
         {
             List<Activity> activities = new List<Activity>()
             {
-
+                new Activity()
+                {
+                    ActivityDescription = "Senior's Golf Tournament",
+                    CreationDate = new DateTime(2017, 1, 30)
+                },
+                new Activity()
+                {
+                    ActivityDescription = "Leadership General Assembly Meeting",
+                    CreationDate = new DateTime(2017, 1, 30)
+                },
+                new Activity()
+                {
+                    ActivityDescription = "Youth Bowling Tournament",
+                    CreationDate = new DateTime(2017, 1, 30)
+                },
+                new Activity()
+                {
+                    ActivityDescription = "Young ladies cooking lessons",
+                    CreationDate = new DateTime(2017, 1, 30)
+                },
+                new Activity()
+                {
+                    ActivityDescription = "Youth Craft lessons",
+                    CreationDate = new DateTime(2017, 1, 30)
+                },
+                new Activity()
+                {
+                    ActivityDescription = "Youth Choir practice",
+                    CreationDate = new DateTime(2017, 1, 30)
+                },
+                new Activity()
+                {
+                    ActivityDescription = "Lunch",
+                    CreationDate = new DateTime(2017, 1, 30)
+                },
+                new Activity()
+                {
+                    ActivityDescription = "Pancake Breakfast",
+                    CreationDate = new DateTime(2017, 1, 30)
+                },
+                new Activity()
+                {
+                    ActivityDescription = "Swimming lessons for the youth",
+                    CreationDate = new DateTime(2017, 1, 30)
+                },
+                new Activity()
+                {
+                    ActivityDescription = "Swimming exercise for parents",
+                    CreationDate = new DateTime(2017, 1, 30)
+                },
+                new Activity()
+                {
+                    ActivityDescription = "Bingo Tournament",
+                    CreationDate = new DateTime(2017, 1, 30)
+                },
+                new Activity()
+                {
+                    ActivityDescription = "BBQ Lunch",
+                    CreationDate = new DateTime(2017, 1, 30)
+                },
+                new Activity()
+                {
+                    ActivityDescription = "Garage Sale",
+                    CreationDate = new DateTime(2017, 1, 30)
+                }
             };
 
             return activities.ToArray();
