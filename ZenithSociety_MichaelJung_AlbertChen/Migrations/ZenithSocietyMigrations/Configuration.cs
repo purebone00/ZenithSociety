@@ -30,7 +30,8 @@ namespace ZenithSociety_MichaelJung_AlbertChen.Migrations.ZenithSocietyMigration
             //    );
             //
 
-
+            context.Activities.AddOrUpdate(f => new { f.ActivityDescription, f.CreationDate }, getActivites());
+            context.SaveChanges();
         }
 
         private Activity[] getActivites()
