@@ -19,6 +19,6 @@ namespace ZenithDataLib
         public bool IsActive { get; set; }
 
         public Activity InActivity { get; set; }
-
+        public int ActivityId { get; set; }
     }
 }

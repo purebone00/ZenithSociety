@@ -29,5 +29,8 @@ namespace ZenithDataLib
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<ZenithDataLib.Activity> Activities { get; set; }
+        public System.Data.Entity.DbSet<ZenithDataLib.Event> Events { get; set; }
     }
 }
