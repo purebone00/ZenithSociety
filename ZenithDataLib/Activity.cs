@@ -11,7 +11,11 @@ namespace ZenithDataLib
     {
         [Key]
         public int ActivityId { get; set; }
+
+        [Required]
+        [StringLength(128)]
         public string ActivityDescription { get; set; }
+
         public DateTime CreationDate { get; set; }
 
         public List<Event> Events { get; set; }
