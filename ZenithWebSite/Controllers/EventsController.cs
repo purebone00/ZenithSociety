@@ -17,7 +17,8 @@ namespace ZenithWebSite.Controllers
         // GET: Events
         public ActionResult Index()
         {
-            return View(db.Events.ToList());
+            var events = db.Events.Include(db => db.Activity);
+            return View(events.ToList());
         }
 
         // GET: Events/Details/5
@@ -38,6 +39,7 @@ namespace ZenithWebSite.Controllers
         // GET: Events/Create
         public ActionResult Create()
         {
+            ViewBag.ActivityId = new SelectList(db.Activities, "ActivityId", "ActivityDescription");
             return View();
         }
 
@@ -55,6 +57,7 @@ namespace ZenithWebSite.Controllers
                 return RedirectToAction("Index");
             }
 
+            ViewBag.ActivityId = new SelectList(db.Activities, "ActivityId", "ActivityDescription", @event.ActivityId);
             return View(@event);
         }
 
@@ -70,6 +73,7 @@ namespace ZenithWebSite.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.ActivityId = new SelectList(db.Activities, "ActivityId", "ActivityDescription", @event.ActivityId);
             return View(@event);
         }
 
@@ -86,6 +90,7 @@ namespace ZenithWebSite.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.ActivityId = new SelectList(db.Activities, "ActivityId", "ActivityDescription", @event.ActivityId);
             return View(@event);
         }
 
