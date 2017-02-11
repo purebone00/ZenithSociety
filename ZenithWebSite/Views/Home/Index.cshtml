@@ -1,31 +1,55 @@
-﻿@{
+﻿@model IEnumerable<ZenithWebSite.Controllers.HomeController.EventActivityModel>
+
+@{
     ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+<div class="container">
+    <div class="container text-center">
+        <div class="row">
+            <h2><span class="glyphicon glyphicon-calendar"></span> Schedule</h2>
+            <br />
+        </div>
     </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+    <div class="row">
+        @foreach (var e in Model.GroupBy(item => item.Event.StartDateTime))
+            {
+            <div class=@e.Key.ToString("dddd") onclick="foldContent(this.className)">
+
+                <div class="container text-center" style="background-color:#333; color:#eee;">
+                    <div class="col-md-5">
+                        <p>@e.Key.ToString("dddd MMM dd, yyyy")</p>
+                    </div>
+                    <div class="col-md-5">
+                        <p>Description</p>
+                    </div>
+                    <div class="col-md-2">
+                        <p><span class="glyphicon glyphicon-chevron-down"></span></p>
+                    </div>
+                </div>
+
+
+                <div class="data" id=@e.Key.ToString("dddd")>
+                    <table class="table">
+                        @foreach (var a in e)
+                        {
+                            <tr>
+                                <td class="eventTime">@a.Event.StartDateTime.ToString("HH:mm tt") - @a.Event.EndDateTime.ToString("HH:mm tt")</td>
+                                <td class="activityDescr">@a.Activity.ActivityDescription</td>
+                                @if (User.IsInRole("Admin"))
+                                {
+                                    <td class="activityDescr">
+                                        <a href="/Events/Edit/@a.Event.EventId"><span class="glyphicon glyphicon-pencil"></span></a>
+                                        <a href="/Events/Edit/@a.Event.EventId"><span class="glyphicon glyphicon-trash"></span></a>
+                                    </td>
+                                }
+                            </tr>
+                        }
+                    </table>
+                </div>
+                <br />
+            </div>
+        }
     </div>
 </div>
