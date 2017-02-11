@@ -43,7 +43,7 @@ namespace ZenithWebSite.Migrations.Identity
             context.Activities.AddOrUpdate(f => new { f.ActivityDescription, f.CreationDate }, getActivites());
             context.SaveChanges();
 
-            context.Events.AddOrUpdate(f => new { f.CreatedTime, f.StartDateTime, f.EndDateTime, f.EnteredBy, f.IsActive }, getEvents(context));
+            context.Events.AddOrUpdate(f => new { f.EventDate, f.CreatedTime, f.StartDateTime, f.EndDateTime, f.EnteredBy, f.IsActive }, getEvents(context));
             context.SaveChanges();
         }
 
@@ -139,82 +139,90 @@ namespace ZenithWebSite.Migrations.Identity
             {
                 new Event()
                 {
+                EventDate     = new DateTime(2017, 04, 04),
+                CreatedTime   = new DateTime(2017, 04, 01, 08, 30, 00),
                 StartDateTime = new DateTime(2017, 04, 04, 08, 30 ,00),
                 EndDateTime   = new DateTime(2017, 04, 04, 10, 30, 00),
-                ActivityId    = db.Activities.FirstOrDefault(f => f.ActivityDescription == "Senior's Golf Tournament").ActivityId,
                 EnteredBy     = "a",
-                CreatedTime   = new DateTime(2017, 04, 01, 08, 30, 00),
-                IsActive      = true
+                IsActive      = true,
+                ActivityId    = db.Activities.FirstOrDefault(f => f.ActivityDescription == "Senior's Golf Tournament").ActivityId
                 },
 
                 new Event()
                 {
+                EventDate     = new DateTime(2017, 04, 05),
+                CreatedTime   = new DateTime(2017, 04, 02, 08, 30, 00),
                 StartDateTime = new DateTime(2017, 04, 05, 08, 30 ,00),
                 EndDateTime   = new DateTime(2017, 04, 05, 10, 30, 00),
-                ActivityId    = db.Activities.FirstOrDefault(f => f.ActivityDescription == "Leadership General Assembly Meeting").ActivityId,
                 EnteredBy     = "a",
-                CreatedTime   = new DateTime(2017, 04, 02, 08, 30, 00),
-                IsActive      = true
+                IsActive      = true,
+                ActivityId    = db.Activities.FirstOrDefault(f => f.ActivityDescription == "Leadership General Assembly Meeting").ActivityId
                 },
 
                 new Event()
                 {
+                EventDate     = new DateTime(2017, 04, 07),
+                CreatedTime   = new DateTime(2017, 04, 03, 08, 30, 00),
                 StartDateTime = new DateTime(2017, 04, 07, 17, 30 ,00),
                 EndDateTime   = new DateTime(2017, 04, 07, 19, 15, 00),
-                ActivityId    = db.Activities.FirstOrDefault(f => f.ActivityDescription == "Youth Bowling Tournament").ActivityId,
                 EnteredBy     = "a",
-                CreatedTime   = new DateTime(2017, 04, 03, 08, 30, 00),
-                IsActive      = true
+                IsActive      = true,
+                ActivityId    = db.Activities.FirstOrDefault(f => f.ActivityDescription == "Youth Bowling Tournament").ActivityId
                 },
 
                 new Event()
                 {
+                EventDate     = new DateTime(2017, 04, 07),
+                CreatedTime   = new DateTime(2017, 04, 04, 08, 30, 00),
                 StartDateTime = new DateTime(2017, 04, 07, 19, 00 ,00),
                 EndDateTime   = new DateTime(2017, 04, 07, 20, 00, 00),
-                ActivityId    = db.Activities.FirstOrDefault(f => f.ActivityDescription == "Young ladies cooking lessons").ActivityId,
                 EnteredBy     = "a",
-                CreatedTime   = new DateTime(2017, 04, 04, 08, 30, 00),
-                IsActive      = true
+                IsActive      = true,
+                ActivityId    = db.Activities.FirstOrDefault(f => f.ActivityDescription == "Young ladies cooking lessons").ActivityId
                 },
 
                 new Event()
                 {
+                EventDate     = new DateTime(2017, 04, 08),
+                CreatedTime   = new DateTime(2017, 04, 05, 08, 30, 00),
                 StartDateTime = new DateTime(2017, 04, 08, 08, 30 ,00),
                 EndDateTime   = new DateTime(2017, 04, 08, 10, 30, 00),
-                ActivityId    = db.Activities.FirstOrDefault(f => f.ActivityDescription == "Youth craft lessons").ActivityId,
                 EnteredBy     = "a",
-                CreatedTime   = new DateTime(2017, 04, 05, 08, 30, 00),
-                IsActive      = true
+                IsActive      = true,
+                ActivityId    = db.Activities.FirstOrDefault(f => f.ActivityDescription == "Youth craft lessons").ActivityId
                 },
 
                 new Event()
                 {
+                EventDate     = new DateTime(2017, 04, 08),
+                CreatedTime   = new DateTime(2017, 04, 05, 08, 30, 00),
                 StartDateTime = new DateTime(2017, 04, 08, 10, 30 ,00),
                 EndDateTime   = new DateTime(2017, 04, 08, 12, 00, 00),
-                ActivityId    = db.Activities.FirstOrDefault(f => f.ActivityDescription == "Youth choir practice").ActivityId,
                 EnteredBy     = "a",
-                CreatedTime   = new DateTime(2017, 04, 05, 08, 30, 00),
-                IsActive      = true
+                IsActive      = true,
+                ActivityId    = db.Activities.FirstOrDefault(f => f.ActivityDescription == "Youth choir practice").ActivityId
                 },
 
                 new Event()
                 {
+                EventDate     = new DateTime(2017, 04, 08),
+                CreatedTime   = new DateTime(2017, 04, 05, 08, 30, 00),
                 StartDateTime = new DateTime(2017, 04, 08, 12, 00 ,00),
                 EndDateTime   = new DateTime(2017, 04, 08, 12, 30, 00),
-                ActivityId    = db.Activities.FirstOrDefault(f => f.ActivityDescription == "Lunch").ActivityId,
                 EnteredBy     = "a",
-                CreatedTime   = new DateTime(2017, 04, 05, 08, 30, 00),
-                IsActive      = true
+                IsActive      = true,
+                ActivityId    = db.Activities.FirstOrDefault(f => f.ActivityDescription == "Lunch").ActivityId
                 },
 
                 new Event()
                 {
+                EventDate     = new DateTime(2017, 04, 08),
+                CreatedTime   = new DateTime(2017, 04, 05, 08, 30, 00),
                 StartDateTime = new DateTime(2017, 04, 09, 07, 30 ,00),
                 EndDateTime   = new DateTime(2017, 04, 09, 08, 30, 00),
-                ActivityId    = db.Activities.FirstOrDefault(f => f.ActivityDescription == "Youth choir practice").ActivityId,
                 EnteredBy     = "a",
-                CreatedTime   = new DateTime(2017, 04, 05, 08, 30, 00),
-                IsActive      = true
+                IsActive      = true,
+                ActivityId    = db.Activities.FirstOrDefault(f => f.ActivityDescription == "Youth choir practice").ActivityId
                 },
             };
             return events.ToArray();

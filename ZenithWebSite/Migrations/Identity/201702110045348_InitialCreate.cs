@@ -22,6 +22,7 @@ namespace ZenithWebSite.Migrations.Identity
                 c => new
                     {
                         EventId = c.Int(nullable: false, identity: true),
+                        EventDate = c.DateTime(nullable: false),
                         StartDateTime = c.DateTime(nullable: false),
                         EndDateTime = c.DateTime(nullable: false),
                         EnteredBy = c.String(),
