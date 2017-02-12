@@ -1,12 +1,59 @@
-﻿
-@model IEnumerable<ZenithDataLib.Models.Activity>
+﻿@model IEnumerable<ZenithWebSite.Controllers.HomeController.EventActivityModel> 
 @{
     ViewBag.Title = "Home Page";
 }
 
-@foreach (var c in Model)
-{
-    <p>
-        @c.ActivityDescription
-    </p>
-}
+
+
+<div class="container">
+    <div class="container text-center">
+        <div class="row">
+            <h2><span class="glyphicon glyphicon-calendar"></span> Schedule</h2>
+            <br />
+        </div>
+    </div>
+    <div class="row">
+        @foreach (var e in Model.GroupBy(item => item.Event.EventDate))
+        {
+            <div>
+                <div class="container col-xs-12 text-center" style="background-color:#333; color:#eee;">
+                    <div class="col-md-5 text-left">
+                        <p>@e.Key.ToString("dddd MMM dd, yyyy")</p>
+                    </div>
+                    <div class="col-md-5 text-left hidden-sm hidden-xs">
+                        <p>Description</p>
+                    </div>
+                    <div class="col-md-2 hidden-sm hidden-xs">
+                        @if (User.IsInRole("Admin"))
+                        {
+                            <p>Options</p>
+                        }
+                    </div>
+                </div>
+
+
+                <div class="data col-sm-12" id=@e.Key.ToString("dddd")>
+                    <table class="table">
+                        @foreach (var a in e.OrderBy(item => item.Event.StartDateTime))
+                        {
+                            <tr>
+                                <td class="col-md-5">@a.Event.StartDateTime.ToString("HH:mm tt") - @a.Event.EndDateTime.ToString("HH:mm tt")</td>
+                                <td class="col-md-5">@a.Activity.ActivityDescription</td>
+                                <td class="col-md-2">
+                                    @if (User.IsInRole("Admin"))
+                                    {
+
+                                        <a href="/Events/Edit/@a.Event.EventId"><span class="glyphicon glyphicon-pencil"></span></a>
+                                        <a href="/Events/Edit/@a.Event.EventId"><span class="glyphicon glyphicon-trash"></span></a>
+
+                                    }
+                                </td>
+                            </tr>
+                        }
+                    </table>
+                </div>
+                <br />
+            </div>
+        }
+    </div>
+</div>
