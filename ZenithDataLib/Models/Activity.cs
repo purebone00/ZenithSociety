@@ -14,6 +14,7 @@ namespace ZenithDataLib.Models
 
         [Required]
         [StringLength(128)]
+        [Display(Name = "Activity Title")]
         public string ActivityDescription { get; set; }
 
         public DateTime CreationDate { get; set; }

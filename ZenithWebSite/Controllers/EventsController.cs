@@ -48,7 +48,7 @@ namespace ZenithWebSite.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "EventId,StartDateTime,EndDateTime,EnteredBy,CreatedTime,IsActive,ActivityId")] Event @event)
+        public ActionResult Create([Bind(Include = "EventId,EventDate,StartDateTime,EndDateTime,EnteredBy,CreatedTime,IsActive,ActivityId")] Event @event)
         {
             if (ModelState.IsValid)
             {
@@ -82,7 +82,7 @@ namespace ZenithWebSite.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "EventId,StartDateTime,EndDateTime,EnteredBy,CreatedTime,IsActive,ActivityId")] Event @event)
+        public ActionResult Edit([Bind(Include = "EventId,EventDate,StartDateTime,EndDateTime,EnteredBy,CreatedTime,IsActive,ActivityId")] Event @event)
         {
             if (ModelState.IsValid)
             {
