@@ -1,4 +1,6 @@
 Michael Jung
+A00814776
+mjung24@mybcit.ca
 
 Albert Fong-Chiaw Chen
 A00961560
